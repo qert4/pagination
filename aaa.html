@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+    //pageno    이전으로    start   end     다음으로
+    // 1           0        1       5       6
+    // 2           0        1       5       6       
+    // 3           0        1       5       6
+    // 4           0        1       5       6
+    // 5           0        1       5       6
+    // 6           5        6       10      11  
+    // 7           5        6       10      11    
+    // 8           5        6       10      11
+    // 9           5        6       10      11
+    // 10          5        6       10      11
+    // 11          10       11      12      0
+    // 12          10       11      12      0
+    blockSize=5;
+    totalcount = 114;
+    pagesize = 10;
+    const countOfpage = Math.ceil(totalcount/pagesize);
+    console.log(countOfpage);
+
+    for(let i=1; i<=12; i++){
+        const prev= Math.floor((i-1)/blockSize) * blockSize;
+        const start = prev + 1;
+        let end = prev + blockSize;
+        let next = end+1; 
+        if(end>=countOfpage){
+            end=countOfpage;
+            next = 0;
+        }
+        console.log(`${i} : ${prev} ${start} ${end} ${next}`);  
+    }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

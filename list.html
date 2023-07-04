@@ -18,7 +18,10 @@
             const pageno= 1;
             // async함수를 호출할 때 await를 붙여야 한다
             const result = await fetch(pageno);
+            console.log(result);
             printContacts(result.contacts);
+            const pagination = getPagination(result);
+            printPagination(pagination);
         });      
 
     </script>
@@ -30,7 +33,7 @@
                 <th>번호</th><th>이름</th><th>주소</th><th>연락처</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
 
         </tbody>
    </table>
